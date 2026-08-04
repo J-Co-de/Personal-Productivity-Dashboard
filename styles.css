@@ -1,0 +1,58 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.starry-background {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 100dvh;
+    background: #1e394d;
+    background: radial-gradient(circle, rgba(30, 57, 77, 1) 0%, rgba(22, 25, 56, 1) 50%, rgba(18, 25, 74, 1) 88%);
+}
+
+.star {
+    background-color: white;
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+}
+
+@keyframes twinkle1{
+
+    0%,
+    100% {
+        opacity: 0.3;
+    }
+
+    50% {
+        opacity: 0.6;
+    }
+}
+
+@keyframes twinkle2 {
+
+    0%,
+    100% {
+        opacity: 0.1;
+    }
+
+    50% {
+        opacity: 0.7;
+    }
+}
+
+@keyframes twinkle2 {
+
+    0%,
+    100% {
+        opacity: 0.4;
+    }
+
+    50% {
+        opacity: 0.9;
+    }
+}
