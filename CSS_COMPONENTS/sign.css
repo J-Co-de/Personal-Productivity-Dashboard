@@ -1,0 +1,180 @@
+@layer sign {
+    .starry-background {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        min-height: 100dvh;
+        background: oklch(var(--background-void));
+        z-index: -1;
+    }
+
+    .star {
+        position: absolute;
+        background: white;
+        border-radius: 50%;
+    }
+
+    .dashboard-sign {
+        height: 100%;
+        max-width: 1400px;
+        justify-self: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .header {
+            display: flex;
+            align-items: center;
+            height: 2rem;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+
+            .logo {
+                width: 2rem;
+                height: 2rem;
+                background: linear-gradient(135deg, oklch(var(--primary-blue)), oklch(var(--accent-purple)));
+                padding: .5rem;
+                border-radius: 100%;
+            }
+
+            .header-text {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                height: 100%;
+
+                h1,
+                span {
+                    font-family: var(--header-font);
+                }
+
+                h1 {
+                    color: white;
+                    font-size: var(--fs-base);
+                    line-height: 0.7;
+                }
+
+                span {
+                    color: oklch(var(--muted-text));
+                    font-size: var(--fs-sm);
+                    line-height: 0.7;
+                }
+            }
+        }
+
+        .main-card {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: start;
+            gap: 1rem;
+            background: oklch(var(--card-surface));
+            border: oklch(var(--primary-blue) / 0.1) 2px solid;
+            border-radius: 10px;
+            padding: 3rem 2rem;
+            max-width: 550px;
+
+            .connection {
+                display: flex;
+                align-items: center;
+                gap: 0.4rem;
+
+                .blinking-light {
+                    background-color: oklch(var(--success-green));
+                    border-radius: 100%;
+                    width: 8px;
+                    height: 8px;
+                }
+
+                span {
+                    color: oklch(var(--success-green));
+                    line-height: 10px;
+                    font-family: var(--header-font);
+                }
+            }
+
+            h2 {
+                color: white;
+                font-family: var(--header-font);
+                font-size: var(--fs-xxl);
+                width: 60%;
+            }
+
+            p {
+                color: oklch(var(--muted-text));
+                width: 70%;
+            }
+
+            form {
+                display: flex;
+                flex-direction: column;
+                width: 80%;
+
+                label {
+                    color: oklch(var(--muted-text));
+                    margin-bottom: 0.5rem;
+                }
+
+                input {
+                    color: white;
+                    background-color: oklch(var(--muted-text) / var(--opacity-1));
+                    padding: 1rem;
+                    border-radius: 10px;
+                    border: 2px solid oklch(var(--primary-blue) / var(--opacity-1));
+                    margin-bottom: 1rem;
+                    width: 100%;
+
+                    &::placeholder {
+                        color: oklch(var(--muted-text) / var(--opacity-8));
+                    }
+
+                    &:focus {
+                        background-color: oklch(var(--primary-blue) / 0.05);
+                        border-color: oklch(var(--primary-blue) / var(--opacity-6))
+                    }
+
+                    
+                }
+            }
+        }
+
+    }
+
+    @keyframes twinkle1 {
+
+        0%,
+        100% {
+            opacity: 0.3;
+        }
+
+        50% {
+            opacity: 0.6;
+        }
+    }
+
+    @keyframes twinkle2 {
+
+        0%,
+        100% {
+            opacity: 0.1;
+        }
+
+        50% {
+            opacity: 0.7;
+        }
+    }
+
+    @keyframes twinkle2 {
+
+        0%,
+        100% {
+            opacity: 0.4;
+        }
+
+        50% {
+            opacity: 0.9;
+        }
+    }
+}

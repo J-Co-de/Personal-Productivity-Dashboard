@@ -1,58 +1,48 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+@layer reset, sign, tokens, components, utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+
+@import "CSS_COMPONENTS/reset.css";
+@import "CSS_COMPONENTS/sign.css";
+
+:root {
+    --primary-blue: 0.6904 0.165 255.810;
+    --accent-purple: 0.6268 0.2325 303.90;
+    --background-void: 0.1118 0.0247 274.250;
+    --foreground: 0.9476 0.0248 273.50;
+    --card-surface: 0.1759 0.0494 273.170;
+    --muted-text: 0.5608 0.073 272.620;
+    --success-green: 0.7227 0.192 149.580;
+    --warning-amber: 0.7686 0.1647 70.080;
+    --cyan-nebula: 0.7971 0.1339 211.530;
+
+    --opacity-8: 0.8;
+    --opacity-6: 0.6;
+    --opacity-5: 0.5;
+    --opacity-3: 0.3;
+    --opacity-2: 0.2;
+    --opacity-1: 0.1;
+
+    --header-font: 'Orbitron', monospace;
+
+    --fs-xs: 0.75rem;
+    --fs-sm: 0.875rem;
+    --fs-base: 1rem;
+    --fs-md: 1.125rem;
+    --fs-lg: 1.25rem;
+    --fs-xl: 1.5rem;
+    --fs-xxl: 2rem;
 }
 
-.starry-background {
-    position: relative;
-    top: 0;
-    left: 0;
-    width: 100%;
-    min-height: 100dvh;
-    background: #1e394d;
-    background: radial-gradient(circle, rgba(30, 57, 77, 1) 0%, rgba(22, 25, 56, 1) 50%, rgba(18, 25, 74, 1) 88%);
-}
 
-.star {
-    background-color: white;
-    position: absolute;
-    background: white;
-    border-radius: 50%;
-}
-
-@keyframes twinkle1{
-
-    0%,
-    100% {
-        opacity: 0.3;
+.example {
+    --primary-blue: oklch(0.6904 0.165 255.810);
+    --accent-purple: oklch(0.6268 0.2325 303.90);
+    --background-void: oklch(0.1118 0.0247 274.250);
+    --foreground: oklch(0.9476 0.0248 273.50);
+    --card-surface: oklch(0.1759 0.0494 273.170);
+    --muted-text: oklch(0.5608 0.073 272.620);
+    --success-green: oklch(0.7227 0.192 149.580);
+    --warning-amber: oklch(0.7686 0.1647 70.080);
+    --cyan-nebula: oklch(0.7971 0.1339 211.530);
     }
-
-    50% {
-        opacity: 0.6;
-    }
-}
-
-@keyframes twinkle2 {
-
-    0%,
-    100% {
-        opacity: 0.1;
-    }
-
-    50% {
-        opacity: 0.7;
-    }
-}
-
-@keyframes twinkle2 {
-
-    0%,
-    100% {
-        opacity: 0.4;
-    }
-
-    50% {
-        opacity: 0.9;
-    }
-}
