@@ -31,5 +31,20 @@ const togglePasswordVisibility = (e) => {
       ? "oklch(var(--primary-blue) / var(--opacity-1)"
       : "white";
 };
+
+document.getElementById("google-login-btn").onclick = () => {
+  const params = new URLSearchParams({
+    client_id:
+      "759302179418-6ceak16q8qba0qo8bualdbpiiavs01qp.apps.googleusercontent.com",
+    redirect_uri: "https://j-co-de.github.io",
+    response_type: "code",
+    scope: "openid email profile",
+    access_type: "offline",
+    prompt: "consent",
+  });
+
+  window.location.href = `https://accounts.google.com/o/oauth2/v2/auth?${params.toString()}`;
+};
+
 implementStars();
 passwordVisibleBtn.addEventListener("click", togglePasswordVisibility);
