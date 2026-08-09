@@ -178,26 +178,6 @@
                         height: 1.5rem;
                     }
                 }
-
-                .google-sign {
-                    display: grid;
-                    grid-template-columns: auto 1fr;
-                    align-items: center;
-                    padding: 1rem;
-                    width: 100%;
-                    border-radius: 10px;
-                    background: #fff;
-                    color: #3c4043;
-                    margin-bottom: 1rem;
-                    font-size: 1.2rem;
-
-                    svg {
-                        width: 1.5rem;
-                        height: 1.5rem;
-                    }
-                }
-
-
             }
 
             .or-breakline {

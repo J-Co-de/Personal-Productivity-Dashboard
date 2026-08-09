@@ -4,7 +4,6 @@ const passwordVisibleBtn = document.getElementById("password-visibility");
 const passwordVisibleSvg = document.getElementById("password-visible");
 const passwordInvisibleSvg = document.getElementById("password-invisible");
 const myGoogleSignIn = document.getElementById("google-sign");
-const realGoogleSignIn = document.getElementById("g_id_signin");
 const starCount = 1000;
 
 function implementStars() {
@@ -32,26 +31,5 @@ const togglePasswordVisibility = (e) => {
       ? "oklch(var(--primary-blue) / var(--opacity-1)"
       : "white";
 };
-
-function handleCredentialResponse(response) {
-  console.log(response.credential);
-}
-
-
-// 1. Initialize Google
-google.accounts.id.initialize({
-  client_id: "759302179418-6ceak16q8qba0qo8bualdbpiiavs01qp.apps.googleusercontent.com",
-  callback: handleCredentialResponse,
-});
-
-// 2. Render the hidden Google button
-google.accounts.id.renderButton(
-  document.getElementById("g_id_signin"),
-  { theme: "outline", size: "large" }
-);
-
-myGoogleSignIn.addEventListener("click", () => {
-  realGoogleSignIn.click();
-});
-
+implementStars();
 passwordVisibleBtn.addEventListener("click", togglePasswordVisibility);
