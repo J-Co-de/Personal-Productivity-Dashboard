@@ -23,20 +23,21 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        padding: 1rem;
 
         .header {
             display: flex;
             align-items: center;
             height: 2rem;
             gap: 1rem;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
 
             .logo {
                 width: 2rem;
                 height: 2rem;
-                background: linear-gradient(135deg, oklch(var(--primary-blue)), oklch(var(--accent-purple)));
                 padding: .5rem;
                 border-radius: 100%;
+                background: linear-gradient(135deg, oklch(var(--primary-blue)), oklch(var(--accent-purple)));
                 color: white;
             }
 
@@ -50,18 +51,21 @@
                 h1,
                 span {
                     font-family: var(--header-font);
+                    line-height: 0.7;
                 }
 
                 h1 {
                     color: white;
                     font-size: var(--fs-base);
-                    line-height: 0.7;
+
+                    @media screen and (orientation:portrait) {
+                        font-size: var(--fs-sm);
+                    }
                 }
 
                 span {
                     color: oklch(var(--muted-text));
                     font-size: var(--fs-sm);
-                    line-height: 0.7;
                 }
             }
         }
@@ -70,13 +74,14 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-            align-items: start;
-            gap: 1rem;
-            background: oklch(var(--card-surface));
-            border: oklch(var(--primary-blue) / 0.1) 2px solid;
-            border-radius: 10px;
-            padding: 3rem 2rem;
+            align-items: flex-start;
+            gap: 0.8rem;
+            padding: 2rem 1rem;
+            width: 95%;
             max-width: 550px;
+            background: oklch(var(--card-surface));
+            border: 2px solid oklch(var(--primary-blue) / 0.1);
+            border-radius: 10px;
 
             .connection {
                 display: flex;
@@ -84,24 +89,28 @@
                 gap: 0.4rem;
 
                 .blinking-light {
-                    background-color: oklch(var(--success-green));
-                    border-radius: 100%;
                     width: 8px;
                     height: 8px;
+                    border-radius: 100%;
+                    background-color: oklch(var(--success-green));
                 }
 
                 span {
                     color: oklch(var(--success-green));
-                    line-height: 10px;
                     font-family: var(--header-font);
+                    line-height: 10px;
                 }
             }
 
             h2 {
+                width: 60%;
                 color: white;
                 font-family: var(--header-font);
                 font-size: var(--fs-xxl);
-                width: 60%;
+
+                @media screen and (orientation:portrait) {
+                    font-size: var(--fs-xl);
+                }
             }
 
             p {
@@ -112,24 +121,23 @@
                 display: flex;
                 flex-direction: column;
                 width: 100%;
+                gap: inherit;
+                margin-bottom: 0.3rem;
 
                 label {
                     color: oklch(var(--muted-text));
-                    margin-bottom: 0.5rem;
                 }
 
                 .input-wrapper {
                     position: relative;
 
                     input {
-
-                        color: white;
-                        background-color: oklch(var(--muted-text) / var(--opacity-1));
+                        width: 100%;
                         padding: 1rem;
                         border-radius: 10px;
                         border: 2px solid oklch(var(--primary-blue) / var(--opacity-1));
-                        margin-bottom: 1rem;
-                        width: 100%;
+                        background-color: oklch(var(--muted-text) / var(--opacity-1));
+                        color: white;
 
                         &::placeholder {
                             color: oklch(var(--muted-text) / var(--opacity-8));
@@ -137,43 +145,51 @@
 
                         &:focus {
                             background-color: oklch(var(--primary-blue) / 0.05);
-                            border-color: oklch(var(--primary-blue) / var(--opacity-6))
+                            border-color: oklch(var(--primary-blue) / var(--opacity-6));
                         }
-
-
                     }
 
                     .email-svg {
                         pointer-events: none;
                     }
 
-                    svg {
 
+
+                    svg {
                         position: absolute;
                         top: 0.7rem;
                         right: 1rem;
                         width: 2rem;
                         height: 2rem;
                         color: oklch(var(--primary-blue) / var(--opacity-1));
-
                     }
+
+                    .input-wrapper input:focus+svg {
+                        color: oklch(var(--primary-blue) / var(--opacity-6));
+                        width: 100px;
+                        height: 100px;
+                    }
+
+                  
+
                 }
 
                 button[type="submit"] {
                     display: grid;
                     grid-template-columns: auto 1fr auto;
                     align-items: center;
-                    padding: 1rem;
                     width: 100%;
+                    padding: 1rem;
                     border-radius: 10px;
                     background: linear-gradient(135deg, oklch(var(--primary-blue)), oklch(var(--accent-purple)));
                     color: white;
-                    margin-bottom: 1rem;
-                    font-size: 1.2rem;
+                    font-size: var(--fs-lg);
+
+                    @media screen and (orientation:portrait) {
+                        font-size: var(--fs-md);
+                    }
 
                     svg {
-                        top: 0.875rem;
-                        left: 0.75rem;
                         width: 1.5rem;
                         height: 1.5rem;
                     }
@@ -183,14 +199,17 @@
                     display: grid;
                     grid-template-columns: auto 1fr auto;
                     align-items: center;
-                    padding: 0.75rem;
                     width: 100%;
+                    padding: 0.75rem;
                     border-radius: 10px;
                     background: white;
                     color: #1F1F1F;
                     font-family: Google Sans Medium;
-                    margin-bottom: 1rem;
-                    font-size: 1.4rem;
+                    font-size: var(--fs-xl);
+
+                    @media screen and (orientation:portrait) {
+                        font-size: var(--fs-lg);
+                    }
 
                     img {
                         width: 1.25rem;
@@ -199,28 +218,36 @@
                 }
             }
 
-            .or-breakline {
+            hr {
                 width: 100%;
+                height: 1px;
+                border-color: oklch(var(--primary-blue) / var(--opacity-2));
+            }
+
+            .or-breakline {
                 display: flex;
                 align-items: center;
-                margin-bottom: 1rem;
-
-                hr {
-                    width: 100%;
-                    height: 1px;
-                    border-color: oklch(var(--primary-blue) / var(--opacity-2))
-                }
+                width: 100%;
 
                 span {
                     padding: 0 0.5rem;
                     color: oklch(var(--muted-text) / var(--opacity-6));
                 }
             }
+
+            .card-footer {
+                span {
+                    color: oklch(var(--muted-text) / var(--opacity-8));
+                }
+
+                a {
+                    color: oklch(var(--primary-blue) / var(--opacity-8));
+                }
+            }
         }
     }
 
-
-
+    /* Fixed duplicate keyframes */
     @keyframes twinkle1 {
 
         0%,
@@ -230,18 +257,6 @@
 
         50% {
             opacity: 0.6;
-        }
-    }
-
-    @keyframes twinkle2 {
-
-        0%,
-        100% {
-            opacity: 0.1;
-        }
-
-        50% {
-            opacity: 0.7;
         }
     }
 

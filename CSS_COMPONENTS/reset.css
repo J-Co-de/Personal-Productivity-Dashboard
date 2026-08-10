@@ -74,4 +74,28 @@
     [hidden] {
         display: none !important;
     }
+
+    /* Normal autofill — match your default input styling */
+    input:-webkit-autofill {
+        -webkit-text-fill-color: white !important;
+        box-shadow: 0 0 0px 1000px oklch(var(--muted-text) / var(--opacity-1)) inset !important;
+        border: 2px solid oklch(var(--primary-blue) / var(--opacity-1)) !important;
+        transition: background-color 9999s ease-in-out 0s !important;
+    }
+
+    /* Hover autofill — same as normal */
+    input:-webkit-autofill:hover {
+        -webkit-text-fill-color: white !important;
+        box-shadow: 0 0 0px 1000px oklch(var(--muted-text) / var(--opacity-1)) inset !important;
+        border: 2px solid oklch(var(--primary-blue) / var(--opacity-1)) !important;
+    }
+
+    /* Focus autofill — match your focus styling */
+    input:-webkit-autofill:focus {
+        -webkit-text-fill-color: white !important;
+        box-shadow: 0 0 0px 1000px oklch(var(--primary-blue) / 0.05) inset !important;
+        border: 2px solid oklch(var(--primary-blue) / var(--opacity-6)) !important;
+    }
+
+
 }
