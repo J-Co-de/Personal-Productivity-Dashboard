@@ -94,8 +94,6 @@
     input:-webkit-autofill:focus {
         -webkit-text-fill-color: white !important;
         box-shadow: 0 0 0px 1000px oklch(var(--primary-blue) / 0.05) inset !important;
-        border: 2px solid oklch(var(--primary-blue) / var(--opacity-6)) !important;
-    }
-
+        border: 2px solid oklch(var(--primary-blue) / var(--opacity-6)) !im
 
 }
