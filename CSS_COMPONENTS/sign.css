@@ -1,4 +1,11 @@
 @layer sign {
+    main {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem;
+    }
+
     .starry-background {
         position: fixed;
         top: 0;
@@ -15,18 +22,164 @@
         border-radius: 50%;
     }
 
-    .dashboard-sign {
-        height: 100%;
-        max-width: 1400px;
-        justify-self: center;
+    .content {
+        display: flex;
+
+        section {
+            padding: 1rem;
+        }
+    }
+
+    .mission-debrief {
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        justify-content: space-between;
         align-items: center;
-        padding: 1rem;
+
+        @media screen and (orientation:portrait) {
+            display: none;
+        }
+
+        .planet {
+            width: 19rem;
+        }
+
+        .mission-sector {
+            background: oklch(var(--background-void));
+            color: oklch(var(--muted-text));
+            text-align: center;
+            font-size: var(--fs-lg)
+        }
+
+        .temporal-measurements {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+
+            span {
+                color: oklch(var(--muted-text));
+                font-size: var(--fs-md);
+
+                strong {
+                    font-size: var(--fs-lg)
+                }
+
+                &:first-child {
+                    strong {
+                        color: oklch(var(--accent-purple));
+                    }
+                }
+
+                &:last-child {
+                    strong {
+                        color: oklch(var(--primary-blue));
+                    }
+                }
+            }
+
+            hr {
+                height: 1rem;
+                border:1px solid white;
+            }
+        }
+
+        .overview-panel {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 0.8rem;
+            padding: 1.5rem;
+            max-width: 550px;
+            background: oklch(var(--card-surface));
+            border: 2px solid oklch(var(--primary-blue) / 0.1);
+            border-radius: 10px;
+
+            h2 {
+                color: oklch(var(--muted-text) / var(--opacity-8));
+                font-weight: normal;
+                font-size: var(--fs-lg)
+            }
+
+            ul {
+                width: 100%;
+
+
+                li {
+                    display: flex;
+                    align-items: center;
+
+                    padding: 1rem;
+                    border-bottom: 1px solid oklch(var(--primary-blue) / var(--opacity-1));
+
+                    svg {
+                        width: 1rem;
+                        height: 1rem;
+                        margin-right: 2rem;
+                        color: oklch(var(--primary-blue) / var(--opacity-8));
+
+                        &[class="purp"] {
+                            color: oklch(var(--accent-purple) / var(--opacity-8));
+                        }
+                    }
+
+
+
+                    h3 {
+                        color: rgba(255, 255, 255, var(--opacity-8));
+                        font-weight: normal;
+                    }
+
+                    span {
+                        color: oklch(var(--muted-text) / var(--opacity-8));
+                    }
+                }
+
+            }
+
+            .active-members {
+                display: flex;
+                justify-content: space-between;
+
+                width: 100%;
+
+                span:first-child {
+                    color: oklch(var(--muted-text) / var(--opacity-8));
+                }
+
+                span:last-child {
+                    color: oklch(var(--success-green));
+                }
+            }
+
+            .cta {
+                border: 2px solid oklch(var(--primary-blue) / var(--opacity-1));
+                background-color: oklch(var(--muted-text) / var(--opacity-1));
+                border-radius: 10px;
+                padding: 0.5rem;
+
+                p {
+                    color: rgba(255, 255, 255, var(--opacity-6));
+
+                    a {
+                        color: oklch(var(--primary-blue) / var(--opacity-8))
+                    }
+                }
+            }
+        }
+    }
+
+    .dashboard-sign {
+
+        justify-self: center;
+
+        flex-direction: column;
+        align-items: center;
 
         .header {
             display: flex;
+            justify-content: center;
             align-items: center;
             height: 2rem;
             gap: 1rem;
@@ -75,9 +228,8 @@
             flex-direction: column;
             justify-content: center;
             align-items: flex-start;
-            gap: 0.8rem;
-            padding: 2rem 1rem;
-            width: 95%;
+            gap: clamp(0.5rem, 2vh, 2rem);
+            padding: clamp(1rem, 1.8vh, 2rem) 1rem;
             max-width: 550px;
             background: oklch(var(--card-surface));
             border: 2px solid oklch(var(--primary-blue) / 0.1);
@@ -151,26 +303,33 @@
 
                     .email-svg {
                         pointer-events: none;
+                        position: absolute;
+                        top: 0.7rem;
+                        right: 1rem;
                     }
 
 
 
                     svg {
-                        position: absolute;
-                        top: 0.7rem;
-                        right: 1rem;
+
+
                         width: 2rem;
                         height: 2rem;
                         color: oklch(var(--primary-blue) / var(--opacity-1));
                     }
 
-                    .input-wrapper input:focus+svg {
-                        color: oklch(var(--primary-blue) / var(--opacity-6));
-                        width: 100px;
-                        height: 100px;
+                    button {
+                        position: absolute;
+                        top: 0.7rem;
+                        right: 1rem;
                     }
 
-                  
+                    input:focus+svg,
+                    input:focus+button svg {
+                        color: oklch(var(--primary-blue) / var(--opacity-6));
+                    }
+
+
 
                 }
 
