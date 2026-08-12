@@ -10,14 +10,14 @@
     <div class="starry-background" aria-hidden="true"></div>
 
     <main>
-      <div class="content">
+      <div class="content sign-up">
         <section class="mission-debrief">
           <img src="ICONS/planet.png" class="planet" />
           <span class="mission-sector">Mission Sector · Quadrant 7-Alpha</span>
           <div class="temporal-measurements">
-            <span class="time"><strong>00:00:00</strong> UTC</span>
+            <span class="time"><strong id="UTCDisplay">00:00:00</strong> UTC</span>
             <hr />
-            <span class="date"><strong>00/00/00</strong> DATE</span>
+            <span class="date"><strong id="dateDisplay">00/00/00</strong> DATE</span>
           </div>
           <div class="overview-panel">
             <h2>Platform Overview</h2>
@@ -145,8 +145,8 @@
             </div>
             <div class="cta">
               <p>
-                Sign in to pick up where you left off, or
-                <a href="">sign up</a> to enter your workspace
+                Sign up to enter your workspace, or
+                <a href="sign-in.html">sign in</a> to pick up where you left off
               </p>
             </div>
           </div>
@@ -367,13 +367,13 @@
                 type="button"
               >
                 <img src="ICONS/google-logo.png" />
-                Sign in with Google
+                Sign up with Google
               </button>
             </form>
             <hr />
             <div class="card-footer">
-              <span>No account?</span>
-              <a>Request Clearance →</a>
+              <span>Already have an account?</span>
+              <a href="sign-in.html">Sign In →</a>
             </div>
           </div>
         </section>

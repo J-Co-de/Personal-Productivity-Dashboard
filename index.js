@@ -4,7 +4,19 @@ const passwordVisibleBtn = document.getElementById("password-visibility");
 const passwordVisibleSvg = document.getElementById("password-visible");
 const passwordInvisibleSvg = document.getElementById("password-invisible");
 const myGoogleSignIn = document.getElementById("google-sign");
+const UTCDisplay = document.getElementById("UTCDisplay");
+const dateDisplay = document.getElementById("dateDisplay");
+
 const starCount = 1000;
+
+function updateUTCDisplay() {
+  const utc = new Date().toISOString().split("T")[1].split(".")[0];
+  UTCDisplay.textContent = utc;
+}
+function setDateDisplay() {
+  const date = new Date().toISOString().split("T")[0].replaceAll("-", "/");
+  dateDisplay.textContent = date;
+}
 
 function implementStars() {
   for (let i = 0; i < starCount; i++) {
@@ -48,3 +60,6 @@ document.getElementById("google-login-btn").onclick = () => {
 
 implementStars();
 passwordVisibleBtn.addEventListener("click", togglePasswordVisibility);
+updateUTCDisplay();
+setDateDisplay();
+setInterval(updateUTCDisplay, 1000);

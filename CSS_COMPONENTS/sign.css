@@ -8,8 +8,7 @@
 
     .starry-background {
         position: fixed;
-        top: 0;
-        left: 0;
+        inset: 0 auto auto 0;
         width: 100%;
         min-height: 100dvh;
         background: oklch(var(--background-void));
@@ -24,10 +23,15 @@
 
     .content {
         display: flex;
+        min-height: 90%;
 
         section {
             padding: 1rem;
         }
+    }
+
+    .content.sign-up {
+        flex-direction: row-reverse;
     }
 
     .mission-debrief {
@@ -36,7 +40,7 @@
         justify-content: space-between;
         align-items: center;
 
-        @media screen and (orientation:portrait) {
+        @media screen and (max-width: 999px) {
             display: none;
         }
 
@@ -48,7 +52,11 @@
             background: oklch(var(--background-void));
             color: oklch(var(--muted-text));
             text-align: center;
-            font-size: var(--fs-lg)
+            font-size: var(--fs-lg);
+
+            @media screen and (min-width: 1000px) {
+                font-size: var(--fs-xl);
+            }
         }
 
         .temporal-measurements {
@@ -56,13 +64,23 @@
             justify-content: center;
             align-items: center;
             gap: 1rem;
+            background: oklch(var(--background-void));
 
             span {
                 color: oklch(var(--muted-text));
                 font-size: var(--fs-md);
 
+                @media screen and (min-width: 1000px) {
+                    font-size: var(--fs-lg);
+                }
+
                 strong {
-                    font-size: var(--fs-lg)
+                    font-size: var(--fs-lg);
+                    font-family: monospace;
+
+                    @media screen and (min-width: 1000px) {
+                        font-size: var(--fs-xl);
+                    }
                 }
 
                 &:first-child {
@@ -80,7 +98,7 @@
 
             hr {
                 height: 1rem;
-                border:1px solid white;
+                border: 1px solid white;
             }
         }
 
@@ -99,17 +117,19 @@
             h2 {
                 color: oklch(var(--muted-text) / var(--opacity-8));
                 font-weight: normal;
-                font-size: var(--fs-lg)
+                font-size: var(--fs-lg);
+
+                @media screen and (min-width: 1000px) {
+                    font-size: var(--fs-xl);
+                }
             }
 
             ul {
                 width: 100%;
 
-
                 li {
                     display: flex;
                     align-items: center;
-
                     padding: 1rem;
                     border-bottom: 1px solid oklch(var(--primary-blue) / var(--opacity-1));
 
@@ -124,8 +144,6 @@
                         }
                     }
 
-
-
                     h3 {
                         color: rgba(255, 255, 255, var(--opacity-8));
                         font-weight: normal;
@@ -135,13 +153,11 @@
                         color: oklch(var(--muted-text) / var(--opacity-8));
                     }
                 }
-
             }
 
             .active-members {
                 display: flex;
                 justify-content: space-between;
-
                 width: 100%;
 
                 span:first-child {
@@ -163,7 +179,7 @@
                     color: rgba(255, 255, 255, var(--opacity-6));
 
                     a {
-                        color: oklch(var(--primary-blue) / var(--opacity-8))
+                        color: oklch(var(--primary-blue) / var(--opacity-8));
                     }
                 }
             }
@@ -171,9 +187,7 @@
     }
 
     .dashboard-sign {
-
         justify-self: center;
-
         flex-direction: column;
         align-items: center;
 
@@ -188,7 +202,7 @@
             .logo {
                 width: 2rem;
                 height: 2rem;
-                padding: .5rem;
+                padding: 0.5rem;
                 border-radius: 100%;
                 background: linear-gradient(135deg, oklch(var(--primary-blue)), oklch(var(--accent-purple)));
                 color: white;
@@ -209,9 +223,12 @@
 
                 h1 {
                     color: white;
-                    font-size: var(--fs-base);
 
-                    @media screen and (orientation:portrait) {
+                    @media screen and (min-width: 1000px) {
+                        font-size: var(--fs-md);
+                    }
+
+                    @media screen and (max-width: 999px) {
                         font-size: var(--fs-sm);
                     }
                 }
@@ -219,6 +236,10 @@
                 span {
                     color: oklch(var(--muted-text));
                     font-size: var(--fs-sm);
+
+                    @media screen and (min-width: 1000px) {
+                        font-size: var(--fs-md);
+                    }
                 }
             }
         }
@@ -260,7 +281,7 @@
                 font-family: var(--header-font);
                 font-size: var(--fs-xxl);
 
-                @media screen and (orientation:portrait) {
+                @media screen and (max-width: 999px) {
                     font-size: var(--fs-xl);
                 }
             }
@@ -308,11 +329,7 @@
                         right: 1rem;
                     }
 
-
-
                     svg {
-
-
                         width: 2rem;
                         height: 2rem;
                         color: oklch(var(--primary-blue) / var(--opacity-1));
@@ -328,9 +345,6 @@
                     input:focus+button svg {
                         color: oklch(var(--primary-blue) / var(--opacity-6));
                     }
-
-
-
                 }
 
                 button[type="submit"] {
@@ -344,8 +358,12 @@
                     color: white;
                     font-size: var(--fs-lg);
 
-                    @media screen and (orientation:portrait) {
+                    @media screen and (max-width: 999px) {
                         font-size: var(--fs-md);
+                    }
+
+                    @media screen and (min-width: 1000px) {
+                        font-size: var(--fs-xl);
                     }
 
                     svg {
@@ -362,11 +380,11 @@
                     padding: 0.75rem;
                     border-radius: 10px;
                     background: white;
-                    color: #1F1F1F;
+                    color: #1f1f1f;
                     font-family: Google Sans Medium;
                     font-size: var(--fs-xl);
 
-                    @media screen and (orientation:portrait) {
+                    @media screen and (max-width: 999px) {
                         font-size: var(--fs-lg);
                     }
 
@@ -406,7 +424,6 @@
         }
     }
 
-    /* Fixed duplicate keyframes */
     @keyframes twinkle1 {
 
         0%,

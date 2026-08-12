@@ -52,11 +52,13 @@
     a {
         color: inherit;
         text-decoration: none;
-
+        display: inline-block;
 
     }
 
-    button {
+    button,
+    a,
+    input {
         cursor: pointer;
         transition: 0.15s ease-in-out;
 
