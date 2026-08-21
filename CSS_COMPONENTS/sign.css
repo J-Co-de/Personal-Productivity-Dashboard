@@ -1,24 +1,12 @@
+@import "global.css";
+@layer reset, sign, tokens, components, utilities;
+
 @layer sign {
     main {
         display: flex;
         align-items: center;
         justify-content: center;
         padding: 1rem;
-    }
-
-    .starry-background {
-        position: fixed;
-        inset: 0 auto auto 0;
-        width: 100%;
-        min-height: 100dvh;
-        background: oklch(var(--background-void));
-        z-index: 0;
-    }
-
-    .star {
-        position: absolute;
-        background: white;
-        border-radius: 50%;
     }
 
     .content {

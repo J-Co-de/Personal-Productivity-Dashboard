@@ -1,0 +1,77 @@
+@import "global.css";
+@layer reset, dashboard, tokens, components, utilities;
+
+@layer dashboard {
+    header {
+        .sidebar {
+            background-color: oklch(var(--card-surface));
+
+            .logo {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 2rem;
+                gap: 1rem;
+                margin-bottom: 1rem;
+
+                svg {
+                    width: 2rem;
+                    height: 2rem;
+                    padding: 0.5rem;
+                    border-radius: 100%;
+                    background: linear-gradient(135deg, oklch(var(--primary-blue)), oklch(var(--accent-purple)));
+                    color: white;
+                }
+
+                .logo-text {
+
+                    h1,
+                    span {
+                        font-family: var(--header-font);
+                        line-height: 0.7;
+                    }
+
+                    h1 {
+                        color: white;
+
+                        @media screen and (min-width: 1000px) {
+                            font-size: var(--fs-md);
+                        }
+
+                        @media screen and (max-width: 999px) {
+                            font-size: var(--fs-sm);
+                        }
+                    }
+
+                    span {
+                        color: oklch(var(--muted-text));
+                        font-size: var(--fs-sm);
+
+                        @media screen and (min-width: 1000px) {
+                            font-size: var(--fs-md);
+                        }
+                    }
+                }
+            }
+
+            nav {
+                ul {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+
+                    li {
+                        display:inherit;
+                        justify-content:center;b
+                        width: 100%;
+                        svg {
+                            align-self: start !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}

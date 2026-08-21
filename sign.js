@@ -1,13 +1,12 @@
-const starBg = document.querySelector(".starry-background");
+import "./general.js";
+const myGoogleSignIn = document.getElementById("google-sign");
+const UTCDisplay = document.getElementById("UTCDisplay");
+const dateDisplay = document.getElementById("dateDisplay");
 const password = document.getElementById("password");
 const passwordVisibleBtn = document.getElementById("password-visibility");
 const passwordVisibleSvg = document.getElementById("password-visible");
 const passwordInvisibleSvg = document.getElementById("password-invisible");
-const myGoogleSignIn = document.getElementById("google-sign");
-const UTCDisplay = document.getElementById("UTCDisplay");
-const dateDisplay = document.getElementById("dateDisplay");
-
-const starCount = 1000;
+const googleBtn = document.getElementById("google-login-btn");
 
 function updateUTCDisplay() {
   const utc = new Date().toISOString().split("T")[1].split(".")[0];
@@ -16,21 +15,6 @@ function updateUTCDisplay() {
 function setDateDisplay() {
   const date = new Date().toISOString().split("T")[0].replaceAll("-", "/");
   dateDisplay.textContent = date;
-}
-
-function implementStars() {
-  for (let i = 0; i < starCount; i++) {
-    const star = document.createElement("div");
-    const radius = Math.random() * 4 + "px";
-    star.className = "star";
-    star.style.top = Math.random() * 98 + 1 + "vh";
-    star.style.left = Math.random() * 98 + 1 + "vw";
-    star.style.width = radius;
-    star.style.height = radius;
-    star.style.opacity = Math.random();
-    star.style.animation = `twinkle${Math.floor(Math.random() * 3) + 1} ${Math.floor(Math.random() * 3) + 3}s ease-in-out infinite alternate`;
-    starBg.appendChild(star);
-  }
 }
 
 const togglePasswordVisibility = (e) => {
@@ -43,22 +27,20 @@ const togglePasswordVisibility = (e) => {
       ? "oklch(var(--primary-blue) / var(--opacity-1)"
       : "white";
 };
-
-document.getElementById("google-login-btn").onclick = () => {
+function loginWithGoogle() {
   const params = new URLSearchParams({
     client_id:
       "759302179418-6ceak16q8qba0qo8bualdbpiiavs01qp.apps.googleusercontent.com",
-    redirect_uri: "https://j-co-de.github.io",
+    redirect_uri: "https://j-co-de.github.io/sign-in.html",
     response_type: "code",
     scope: "openid email profile",
     access_type: "offline",
     prompt: "consent",
   });
-
   window.location.href = `https://accounts.google.com/o/oauth2/v2/auth?${params.toString()}`;
-};
+}
 
-implementStars();
+googleBtn.onclick = () => loginWithGoogle;
 passwordVisibleBtn.addEventListener("click", togglePasswordVisibility);
 updateUTCDisplay();
 setDateDisplay();

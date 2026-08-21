@@ -5,24 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#03040D" />
     <title>Personal Productivity Dashboard</title>
-    <link rel="stylesheet" href="CSS_COMPONENTS/sign.css" />
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <div class="starry-background" aria-hidden="true"></div>
 
     <main>
-      <div class="content">
+      <div class="content sign-up">
         <section class="mission-debrief">
           <img src="ICONS/planet.png" class="planet" />
           <span class="mission-sector">Mission Sector · Quadrant 7-Alpha</span>
           <div class="temporal-measurements">
-            <span class="time"
-              ><strong id="UTCDisplay">00:00:00</strong> UTC</span
-            >
+            <span class="time"><strong id="UTCDisplay">00:00:00</strong> UTC</span>
             <hr />
-            <span class="date"
-              ><strong id="dateDisplay">00/00/00</strong> DATE</span
-            >
+            <span class="date"><strong id="dateDisplay">00/00/00</strong> DATE</span>
           </div>
           <div class="overview-panel">
             <h2>Platform Overview</h2>
@@ -150,8 +146,8 @@
             </div>
             <div class="cta">
               <p>
-                Sign in to pick up where you left off, or
-                <a href="index.html">sign up</a> to enter your workspace
+                Sign up to enter your workspace, or
+                <a href="sign-in.html">sign in</a> to pick up where you left off
               </p>
             </div>
           </div>
@@ -372,19 +368,19 @@
                 type="button"
               >
                 <img src="ICONS/google-logo.png" />
-                Sign in with Google
+                Sign up with Google
               </button>
             </form>
             <hr />
             <div class="card-footer">
-              <span>No account?</span>
-              <a href="index.html">Create Credidentials →</a>
+              <span>Already have an account?</span>
+              <a href="sign-in.html">Sign In →</a>
             </div>
           </div>
         </section>
       </div>
     </main>
     <script src="https://accounts.google.com/gsi/client" async defer></script>
-    <script type="module" src="sign.js"></script>
+    <script src="index.js"></script>
   </body>
 </html>
