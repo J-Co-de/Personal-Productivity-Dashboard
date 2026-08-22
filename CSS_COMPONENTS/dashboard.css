@@ -2,76 +2,101 @@
 @layer reset, dashboard, tokens, components, utilities;
 
 @layer dashboard {
-    header {
-        .sidebar {
-            background-color: oklch(var(--card-surface));
+    body {
+        display: flex;
+        justify-content: space-between;
+        height: 100%;
 
-            .logo {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                height: 2rem;
-                gap: 1rem;
-                margin-bottom: 1rem;
+        header {
 
-                svg {
-                    width: 2rem;
-                    height: 2rem;
-                    padding: 0.5rem;
-                    border-radius: 100%;
-                    background: linear-gradient(135deg, oklch(var(--primary-blue)), oklch(var(--accent-purple)));
-                    color: white;
+
+            .sidebar {
+
+                height: 100%;
+
+                background: oklch(var(--card-surface));
+                border-right: 2px solid oklch(var(--primary-blue) / var(--opacity-2));
+                width: 11.5rem;
+
+                >* {
+                    padding: 1rem;
                 }
 
-                .logo-text {
-
-                    h1,
-                    span {
-                        font-family: var(--header-font);
-                        line-height: 0.7;
-                    }
-
-                    h1 {
-                        color: white;
-
-                        @media screen and (min-width: 1000px) {
-                            font-size: var(--fs-md);
-                        }
-
-                        @media screen and (max-width: 999px) {
-                            font-size: var(--fs-sm);
-                        }
-                    }
-
-                    span {
-                        color: oklch(var(--muted-text));
-                        font-size: var(--fs-sm);
-
-                        @media screen and (min-width: 1000px) {
-                            font-size: var(--fs-md);
-                        }
-                    }
-                }
-            }
-
-            nav {
-                ul {
+                .top {
                     display: flex;
-                    flex-direction: column;
-                    justify-content: center;
+                    justify-content: space-between;
                     align-items: center;
+                    height: 4rem;
+                    border-bottom: 1px solid oklch(var(--primary-blue) / var(--opacity-2));
 
-                    li {
-                        display:inherit;
-                        justify-content:center;b
-                        width: 100%;
+                    .logo {
+
+                        width: 2rem;
+                        height: 2rem;
+                        padding: 0.5rem;
+                        border-radius: 100%;
+                        background: linear-gradient(135deg, oklch(var(--primary-blue)), oklch(var(--accent-purple)));
+                        color: white;
+                    }
+
+                    button {
                         svg {
-                            align-self: start !important;
+                            width: 2rem;
+                            height: 2rem;
+                            color: oklch(var(--muted-text) / var(--opacity-8));
+                        }
+                    }
+                }
+
+
+                nav {
+                    ul {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: start;
+
+                        gap: 0.5rem;
+
+                        li {
+                            display: inherit;
+                            justify-content: start;
+                            align-items: center;
+                            width: 100%;
+                            gap: 1rem;
+
+                            transition: 0.5s;
+                            border-radius: 10px;
+                            border-color: transparent;
+
+                            a {
+                                display: flex;
+                                align-items: center;
+                                gap: 1rem;
+                                width: 100%;
+                                padding: 1rem;
+                                color: oklch(var(--muted-text) / var(--opacity-8));
+                                font-size: var(--fs-md);
+
+                                .icon {
+                                    width: 1.2rem;
+                                }
+                            }
+
+                            &:hover {
+                                background: oklch(var(--primary-blue) / var(--opacity-1));
+                            }
                         }
                     }
                 }
             }
         }
-    }
 
+        main {
+            width: auto;
+            .overview {
+                background:red;
+            }
+        }
+    }
 }

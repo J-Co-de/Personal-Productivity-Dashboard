@@ -10,16 +10,17 @@
   <body>
     <div class="starry-background"></div>
     <header>
-      <aside class="sidebar" aria-label="Main navigation">
-        <div class="logo">
+      <aside id="sideBar" class="sidebar" aria-label="Main navigation">
+        <div id="top" class="top">
           <svg
             fill="currentColor"
             version="1.1"
-            id="Layer_1"
             xmlns="http://www.w3.org/2000/svg"
             xmlns:xlink="http://www.w3.org/1999/xlink"
             viewBox="0 0 511.998 511.998"
             xml:space="preserve"
+            id="logo"
+            class="logo"
           >
             <g>
               <g>
@@ -64,36 +65,174 @@
               </g>
             </g>
           </svg>
-
-          <div class="logo-text">
-            <h1>Productivity Dashboard</h1>
-            <span>Mission Command</span>
-          </div>
+          <button id="hamburger-button">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="icon"
+            >
+              <path d="M4 5h16" />
+              <path d="M4 12h16" />
+              <path d="M4 19h16" />
+            </svg>
+          </button>
         </div>
-
         <nav>
-          <ul>
+          <ul id="links">
             <li>
-              <a href="#dashboard">⌂ <span>Dashboard</span></a>
+              <a href="#overview">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="icon"
+                >
+                  <path d="M2 8h20" />
+                  <rect width="20" height="16" x="2" y="4" rx="2" />
+                  <path d="M6 16h12" />
+                </svg>
+                <span>Overview</span>
+              </a>
             </li>
             <li>
-              <a href="#tasks">☑ <span>Tasks</span></a>
+              <a href="#tasks">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="icon"
+                >
+                  <path d="M13 5h8" />
+                  <path d="M13 12h8" />
+                  <path d="M13 19h8" />
+                  <path d="m3 17 2 2 4-4" />
+                  <rect x="3" y="4" width="6" height="6" rx="1" />
+                </svg>
+                <span>Tasks</span>
+              </a>
             </li>
             <li>
-              <a href="#goals">◎ <span>Goals</span></a>
+              <a href="#calendar">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="icon"
+                >
+                  <rect x="3" y="3" width="18" height="18" rx="2" />
+                  <path d="M16 2v3" />
+                  <path d="M3 9h18" />
+                  <path d="M8 2v3" />
+                  <path d="M17 13h-6" />
+                  <path d="M13 17H7" />
+                  <path d="M7 13h.01" />
+                  <path d="M17 17h.01" />
+                </svg>
+                <span>Calendar</span>
+              </a>
             </li>
             <li>
-              <a href="#habits">↻ <span>Habits</span></a>
+              <a href="#analytics">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="icon"
+                >
+                  <path d="M12 16v5" />
+                  <path d="M16 14.639V21" />
+                  <path d="M20 10.656V21" />
+                  <path
+                    d="m22 3-8.646 8.646a.5.5 0 0 1-.708 0L9.354 8.354a.5.5 0 0 0-.707 0L2 15"
+                  />
+                  <path d="M4 18.463V21" />
+                  <path d="M8 14.656V21" />
+                </svg>
+                <span>Analytics</span>
+              </a>
             </li>
             <li>
-              <a href="#settings">⚙ <span>Settings</span></a>
+              <a href="#teams">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="icon"
+                >
+                  <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                  <path d="M16 3.128a4 4 0 0 1 0 7.744" />
+                  <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+                  <circle cx="9" cy="7" r="4" />
+                </svg>
+                <span>Teams</span>
+              </a>
+            </li>
+            <li>
+              <a href="#settings">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="icon"
+                >
+                  <path
+                    d="M9.671 4.136a2.34 2.34 0 0 1 4.659 0 2.34 2.34 0 0 0 3.319 1.915 2.34 2.34 0 0 1 2.33 4.033 2.34 2.34 0 0 0 0 3.831 2.34 2.34 0 0 1-2.33 4.033 2.34 2.34 0 0 0-3.319 1.915 2.34 2.34 0 0 1-4.659 0 2.34 2.34 0 0 0-3.32-1.915 2.34 2.34 0 0 1-2.33-4.033 2.34 2.34 0 0 0 0-3.831A2.34 2.34 0 0 1 6.35 6.051a2.34 2.34 0 0 0 3.319-1.915"
+                  />
+                  <circle cx="12" cy="12" r="3" />
+                </svg>
+                <span>Settings</span>
+              </a>
             </li>
           </ul>
         </nav>
       </aside>
     </header>
+    <main id="dashboard">
+      <section id="overview" class="overview">
 
-    <main id="dashboard"></main>
+      </section>
+    </main>
     <script type="module" src="dashboard.js"></script>
   </body>
 </html>
